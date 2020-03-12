@@ -5,6 +5,28 @@
     <div class='form'>
         <form method='POST' action=''>
             {{ form.hidden_tag() }}
+            {{ form.first_name.label }}
+            {{ form.first_name }}
+            {% if form.first_name.errors %}
+                <div class="error">
+                    {% for error in form.first_name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <br>
+            {{ form.last_name.label }}
+            {{ form.last_name }}
+            {% if form.last_name.errors %}
+                    <div class="error">
+                        {% for error in form.last_name.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+            {% endif %}
+        <br>
+        <form method='POST' action=''>
+            {{ form.hidden_tag() }}
             <div class='form_group'>
                 {{ form.email.label }}
                 {{ form.email }}
